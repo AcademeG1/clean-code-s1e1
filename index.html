@@ -1,65 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>Todo App</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
   <link rel="stylesheet"
         href="style.css"
         media="screen"
         charset="utf-8">
 </head>
-<body>
-  <div class="app">
-    <img src="./eisenhower-matrix.jpg">
-    <a class="more-inf"
-       href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
-  </div>
-  <div class="main-page">
-    <p id="add-element-list">
-      <label for="new-task">Add Item</label>
-    <div class="add-item-wrapper">
-    <input id="new-task"
-           class="task"
-           type="text">
-    <button>Add</button>
-  </div>
-  </p>
-  <h3>Todo</h3>
-    <ul id="incomplete-tasks">
-      <li>
-        <input type="checkbox">
-        <label class="task">Pay Bills</label>
-        <input type="text" class="task">
-        <button class="edit">Edit</button>
-        <button class="delete">
-          <img src="./remove.svg">
-        </button>
-      </li>
-      <li class="edit-mode">
-        <input type="checkbox">
-        <label class="task">Go Shopping</label>
-        <input type="text"
-               value="Go Shopping"
-               class="task">
-        <button class="edit">Save</button>
-        <button class="delete">
-          <img src="./remove.svg">
-        </button>
-      </li>
-    </ul>
-  <h3>Completed</h3>
-  <ul id="completed-tasks">
-    <li>
-      <input type="checkbox" checked>
-      <label class="task">See the Doctor</label>
-      <input type="text" class="task">
-      <button class="edit">Edit</button>
-      <button class="delete">
-        <img src="./remove.svg">
-      </button>
-  </li>
-  </ul>
-</div>
+<body class="body-page">
+  <header class="body-page__header header">
+    <img class="header__img" src="./eisenhower-matrix.jpg" alt="The eisenhower matrix">
+    <a class="header__link" href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
+  </header>
+
+  <main class="body-page__main main">
+    <section class="main__add-item add-item">
+      <h3 class="add-item__title title">Add Item</h3>
+      <div class="add-item__container item-container">
+        <label class="item-container__label" for="item-container__label_js">
+          <input class="item-container__input item-container__input_active input-text" type="text" id="item-container__label_js">
+        </label>
+        <button class="item-container__button button">Add</button>
+      </div>
+    </section>
+
+    <section class="body-page__todo todo">
+      <h3 class="todo__title title">Todo</h3>
+      <ul class="todo__list list" id="todo__list_js">
+        <li class="list__item">
+          <input class="list__input input-checkbox" id="list__input_js" type="checkbox">
+          <label class="list__label label-content" for="list__input_js">Pay Bills</label>
+          <label class="list__label container-label" for="list__input-content_js">
+            <input class="list__input list container-label__input container-label__input_active input-text"
+                   id="list__input-content_js" type="text">
+          </label>
+          <button class="list__button button list__button_edit">Edit</button>
+          <button class="list__button button list__button_remove">
+            <img class="img__remove" src="./remove.svg" alt="Remove button">
+          </button>
+        </li>
+
+        <li class="list__item mod-edit">
+          <input class="list__input input-checkbox" id="list__input-todo_js" type="checkbox">
+          <label class="list__label label-content" for="list__input-todo_js"></label>
+          <label class="list__label container-label" for="list__input-todo_js-content">
+            <input class="list__input list container-label__input container-label__input_active input-text"
+                   type="text"
+                   id="list__input-todo_js-content"
+                   value="Go shopping">
+          </label>
+          <button class="list__button button list__button_edit list__button_save">Save</button>
+          <button class="list__button button list__button_remove">
+            <img class="img__remove" src="./remove.svg" alt="Remove button">
+          </button>
+        </li>
+      </ul>
+    </section>
+
+    <section class="body-page__complete complete">
+      <h3 class="complete_title title">Completed</h3>
+      <ul class="complete__list list" id="complete_js">
+        <li class="list__item">
+          <input class="list__input list__input_checked input-checkbox"
+                 id="list_input_complete"
+                 type="checkbox" checked>
+          <label class="list__label label-content" for="list_input_complete">See the Doctor</label>
+          <label class="list__label container-label" for="list__input-content">
+            <input class="list__input list container-label__input container-label__input_active input-text" type="text"
+                   id="list__input-content">
+          </label>
+          <button class="list__button button list__button_edit">Edit</button>
+          <button class="list__button button list__button_remove">
+            <img class="img__remove" src="./remove.svg" alt="Remove button">
+          </button>
+        </li>
+      </ul>
+    </section>
+  </main>
+
 <script src="app.js"></script>
+
 </body>
 </html>
